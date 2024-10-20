@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="assets/img/logo_copy.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pumpkin Prowess: AI Takes on Halloween</title>
+
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: #f0f0f0;
+            text-align: center;
+            font-family: 'Creepster', cursive;
+        }
+
+        .return-home {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #ff6347;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .return-home:hover {
+            background-color: #ff4500;
+        }
+
+    
+        .pumpkin-container {
+            margin-top: 80px;
+            cursor: pointer; 
+        }
+        .pumpkin {
+            width: 220px;
+            height: 220px;
+            filter: brightness(0.7) contrast(1.2);
+            animation: float-dark 3s ease-in-out infinite;
+        }
+        @keyframes float-dark {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-25px); filter: brightness(0.5); }
+            100% { transform: translateY(0); }
+        }
+
+ 
+        .glowing-text {
+            font-size: 26px;
+            color: #ff6347;
+            text-shadow: 
+                0 0 5px #ff6347,
+                0 0 10px #ff6347,
+                0 0 20px #ff6347,
+                0 0 30px #ff6347,
+                0 0 40px #ff4500,
+                0 0 50px #ff4500;
+            margin-top: 10px;
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0% { text-shadow: 0 0 5px #ff6347, 0 0 10px #ff6347; }
+            50% { text-shadow: 0 0 20px #ff6347, 0 0 30px #ff4500; }
+            100% { text-shadow: 0 0 5px #ff6347, 0 0 10px #ff6347; }
+        }
+
+        .answer-box {
+            display: none;
+            margin-top: 30px;
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            position: relative;
+            max-width: 500px;
+            margin: 40px auto;
+        }
+        .answer-box::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 10px;
+            border-style: solid;
+            border-color: transparent transparent #333 transparent;
+        }
+
+        .spooky-text {
+            font-family: 'Creepster', cursive;
+            text-shadow: 0px 0px 10px #ff6347;
+            font-size: 18px;
+        }
+    </style>
+
+    <script type="importmap">
+        {
+          "imports": {
+            "@google/generative-ai": "https://esm.run/@google/generative-ai"
+          }
+        }
+    </script>
+</head>
+<body>
+
+    <a href="halloween.html" class="return-home">← Back to Home</a>
+
+    <h1>Click on the Spooky Pumpkin to Ask!! Beware He knows everything!!💀</h1>
+
+    <div class="pumpkin-container" id="pumpkinClickArea">
+        <img src="assets/img/category2-img.png" alt="Spooky Pumpkin" class="pumpkin">
+        <div class="glowing-text">All Knowing Pumpkin 🎃</div>
+    </div>
+
+    <div class="answer-box" id="answerBox"></div>
+
+    <script type="module">
+        import { GoogleGenerativeAI } from "@google/generative-ai";
+
+        const API_KEY = "AIzaSyDWuM8P_TdNZaJTGaxF5A-KWe2Rx-V0BCw"; 
+        const genAI = new GoogleGenerativeAI(API_KEY);
+        const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+
+        const pumpkinClickArea = document.getElementById('pumpkinClickArea');
+        const answerBox = document.getElementById('answerBox');
+
+        pumpkinClickArea.addEventListener('click', async () => {
+            const question = prompt("Ask the All Knowing Pumpkin anything... if you dare!");
+
+            if (question) {
+                const prompt = `Imagine you're a spooky pumpkin in a haunted house, now answer this question in a spooky pumpkin manner or as a pumpkin should say: "${question}"`;
+                const result = await model.generateContent(prompt);
+                let spookyAnswer = result.response.text();
+
+                if (spookyAnswer.includes('*')) {
+                    spookyAnswer = spookyAnswer.replace(/\*(.*?)\*/g, '<strong>$1</strong>');
+                }
+
+                answerBox.innerHTML = `<p class="spooky-text">🎃 ${spookyAnswer}</p>`;
+                answerBox.style.display = 'block';
+            }
+        });
+    </script>
+
+<audio id="background-sound" autoplay loop>
+    <source src="assets/audio/pumpkin.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+</body>
+</html>
