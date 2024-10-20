@@ -50,6 +50,22 @@ Welcome to my **Halloween Spooky Website**! This project is a fun and interactiv
 
 ## 🧑‍💻 How to Run the Project
 
-1. Clone the repository to your local machine.
+- Clone the repository to your local machine.
    ```bash
    git clone https://github.com/yourusername/halloween-spooky-website.git
+
+### Running the Project Locally
+
+1. **Open the project in your preferred code editor (e.g., VS Code).**
+
+2. **Install and use the Live Server extension to run the project locally:**
+
+   - In VS Code, install the Live Server extension from the Extensions panel.
+   - Right-click on the `index.html` file and select "Open with Live Server".
+   - This will automatically launch the website in your browser, allowing you to interact with all the spooky features in real-time.
+
+3. **Alternatively, you can manually open the `index.html` file in any browser to view the Halloween-themed website.**
+
+### Configuring API Keys
+
+Ensure that the necessary API keys are configured for the Gemini API to enable the Spooky Pumpkin AI chatbot. You can set the API key in the appropriate configuration file or environment variable as required by the project.
