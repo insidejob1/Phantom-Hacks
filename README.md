@@ -7,11 +7,17 @@ Welcome to my **Halloween Spooky Website**! This project is a fun and interactiv
 ### 1. **Loader Page**
 - A custom Halloween-themed loader animation to enhance the initial user experience.
 - The loader displays eerie elements like a floating ghost and spooky text, setting the stage for the rest of the website.
+  
+![Loader Page](./assets/screenshots/loadpage.png)
 
 ### 2. **Home Page**
 - The home page greets users with a **floating ghost animation** and Halloween-themed design elements.
 - **Ghost-Themed Custom Cursor**: The mouse pointer is transformed into a ghost icon, adding to the creepy atmosphere.
 - **Interactive Spooky Cards**: Clicking on these cards triggers pop-ups with random spooky messages and sound effects, perfect for adding jump scares or unexpected surprises.
+
+![Home Page 1](./assets/screenshots/homepage1.png)
+![Home Page 2](./assets/screenshots/homepage2.png)
+![Home Page 3](./assets/screenshots/homepage3.png)
 
 ### 3. **Floating Ghost Animation**
 - A CSS/JavaScript-powered ghost that moves across the screen, adding a lively haunted-house feeling to the website.
@@ -20,6 +26,8 @@ Welcome to my **Halloween Spooky Website**! This project is a fun and interactiv
 - Powered by the **Gemini API**, this spooky pumpkin chatbot interacts with users.
 - Users can ask it Halloween-related questions, and the pumpkin will respond in a spooky manner, using text generation capabilities.
 - The chatbot leverages AI to generate eerie, thematic responses, giving the site a unique and engaging feature.
+
+![Pumpkin AI](./assets/screenshots/pumpkinai.png)
 
 ### 5. **Halloween-Themed Design**
 - The entire website follows a dark, spooky Halloween theme with well-coordinated color schemes, including blacks, oranges, and purples.
