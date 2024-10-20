@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <link rel="icon" type="image/png" href="assets/img/logo_copy.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache">
     <title>Haunted Loading: Spirits in Transit</title>
     <style>
         body {
@@ -106,6 +107,13 @@
         function enterHalloweenDungeon() {
             window.location.href = "halloween.html"; 
         }
+        function playAudio() {
+        const audio = document.getElementById('background-sound');
+        if (!audio.played) {
+            audio.play();
+            audio.played = true;
+        }
+    }
     </script>
     <audio id="background-sound" autoplay loop>
         <source src="assets/audio/loader.mp3" type="audio/mpeg">
