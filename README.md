@@ -62,7 +62,7 @@ Welcome to my **Halloween Spooky Website**! This project is a fun and interactiv
 
    - In VS Code, install the Live Server extension from the Extensions panel.
    - Right-click on the `index.html` file and select "Open with Live Server".
-   - This will automatically launch the website in your browser, allowing you to interact with all the spooky features in real-time.
+   - This will automatically launch the website in your browser, allowing you to interact with all the spooky features in real-time and also have fun.
 
 3. **Alternatively, you can manually open the `index.html` file in any browser to view the Halloween-themed website.**
 
